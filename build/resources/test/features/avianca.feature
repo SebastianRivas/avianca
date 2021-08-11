@@ -7,4 +7,4 @@ Scenario Outline: Busco reservas de vuelos entre dos ciudades con fechas de ida 
 
   Examples:
   | origen | destino | ida | regreso | pasajeros |
-  | Cali | Bogota | "Vie, 20 ago" | "Lun, 27 sep" | 2 |
+  | "Cali" | "Bogota" | "Vie, 20 ago" | "Lun, 27 sep" | "2" |
