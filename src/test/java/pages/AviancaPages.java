@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AviancaPages {
-    @FindBy(name = "pbOrigen")
+    @FindBy(xpath = "//input[contains(@id, 'pbOrigen')]")
     WebElement pbOrigen;
 
-    @FindBy(name = "pbDestino")
+    @FindBy(xpath = "//input[contains(@id, 'pbDestino')]")
     WebElement pbDestino;
 
     @FindBy(name = "pbFechaIda")
@@ -24,10 +24,13 @@ public class AviancaPages {
     @FindBy(xpath = "//a[contains(@data-target, '#menu-abierto')]")
     WebElement menuGlobal;
 
-    @FindBy(xpath = "//a[contains(@href, '/co/es/tu-reserva/consulta-itinerarios/')]")
+    @FindBy(xpath = "//*[@id=\"menu-abierto\"]/div/div/div[2]/div/div[4]/div/div/div[3]/div/ul/li[1]/a")
     WebElement linkItinerarios;
 
-    @FindBy(name = "destinoIter")
+    @FindBy(id = "origenIter")
+    WebElement origenIter;
+
+    @FindBy(id = "destinoIter")
     WebElement destinoIter;
 
     @FindBy(name = "fechaIdaIterISO")
@@ -61,19 +64,26 @@ public class AviancaPages {
                 pbDestino.sendKeys(destino);
             }
             case "itinerario" -> {
-                pbOrigen.sendKeys(origen);
+                origenIter.sendKeys(origen);
                 destinoIter.sendKeys(destino);
             }
         }
     }
 
-    public void ingresarFechas(String diaIda, String diaRegreso){ }
-
-    public void buscarVuelos(){
-        pbTrip.submit();
+    public void ingresarFechas(String diaIda, String diaRegreso, String tipoAccion){
+        switch (tipoAccion) {
+            case "reserva" -> {
+                pbFechaIda.sendKeys(diaIda);
+                pbFechaRegreso.sendKeys(diaRegreso);
+            }
+            case "itinerario" -> {
+                fechaIdaIterISO.sendKeys(diaIda);
+                fechaRegresoIterISO.sendKeys(diaRegreso);
+            }
+        }
     }
 
-    public void buscarHorarios(){
-        mainContent_Ir.submit();
-    }
+    public void buscarVuelos(){ pbTrip.submit(); }
+
+    public void buscarHorarios(){ mainContent_Ir.submit(); }
 }

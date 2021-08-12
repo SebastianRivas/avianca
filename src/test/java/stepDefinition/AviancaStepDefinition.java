@@ -27,13 +27,16 @@ public class AviancaStepDefinition {
 
     @Given("Ingreso a la pagina web de avianca")
     public void ingreso_a_la_pagina_web_de_avianca() {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         aviancaSteps.ingresarAlPortalWeb();
     }
 
     @When("Selecciono la ciudad de {string} y la ciudad {string} ademas de la fecha de {string} y la fecha de {string}")
     public void selecciono_la_ciudad_de_y_la_ciudad_ademas_de_la_fecha_de_y_la_fecha_de(String string, String string2, String string3, String string4) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        aviancaSteps.buscarReservas(string, string2, string3, string4);
     }
 
     @Then("Obtengo el listado de vuelos para reservar junto con sus precios")
@@ -53,8 +56,9 @@ public class AviancaStepDefinition {
 
     @When("Ingreso la ciudad de {string} y la ciudad {string} ademas de la fecha de {string} y la fecha de {string} para ver los horarios de vuelo disponibles")
     public void ingreso_la_ciudad_de_y_la_ciudad_ademas_de_la_fecha_de_y_la_fecha_de_para_ver_los_horarios_de_vuelo_disponibles(String string, String string2, String string3, String string4) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        aviancaSteps.buscarItinerario(string, string2, string3, string4);
     }
 
     @Then("Obtengo el listado de horarios de vuelos y los organizo dependiendo de la fecha de salida")
