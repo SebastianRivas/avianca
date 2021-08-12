@@ -32,6 +32,12 @@ public class AviancaStepDefinition {
         throw new io.cucumber.java.PendingException();
     }
 
+    @When("Selecciono la ciudad de {string} y la ciudad {string} ademas de la fecha de {string} y la fecha de {string} con {string}")
+    public void selecciono_la_ciudad_de_y_la_ciudad_ademas_de_la_fecha_de_y_la_fecha_de_con(String string, String string2, String string3, String string4, String string5) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
     @Then("Obtengo el listado de vuelos para reservar junto con sus precios")
     public void obtengo_el_listado_de_vuelos_para_reservar_junto_con_sus_precios() {
         // Write code here that turns the phrase above into concrete actions

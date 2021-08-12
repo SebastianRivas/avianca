@@ -40,10 +40,10 @@ public class AviancaPages {
         pbDestino.sendKeys(destino);
     }
 
-    public void ingresarFechas(int diaIda, int diaRegreso){
+    public void ingresarFechas(String diaIda, String diaRegreso){
     }
 
-    public void ingresarPasajeros(int numeroPasajeros){
+    public void ingresarPasajeros(String numeroPasajeros){
     }
 
     public void buscarVuelos(){
