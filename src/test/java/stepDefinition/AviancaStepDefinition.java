@@ -27,16 +27,7 @@ public class AviancaStepDefinition {
 
     @Given("Ingreso a la pagina web de avianca")
     public void ingreso_a_la_pagina_web_de_avianca() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         aviancaSteps.ingresarAlPortalWeb();
-    }
-
-    @Given("Ingreso a la pagina web de avianca y accedo al menu")
-    public void ingreso_a_la_pagina_web_de_avianca_y_accedo_al_menu() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        aviancaSteps.ingresarAlPortalItinerarios();
     }
 
     @When("Selecciono la ciudad de {string} y la ciudad {string} ademas de la fecha de {string} y la fecha de {string}")
@@ -45,14 +36,21 @@ public class AviancaStepDefinition {
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("Ingreso la ciudad de {string} y la ciudad {string} ademas de la fecha de {string} y la fecha de {string} para ver los horarios de vuelo disponibles")
-    public void ingreso_la_ciudad_de_y_la_ciudad_ademas_de_la_fecha_de_y_la_fecha_de_para_ver_los_horarios_de_vuelo_disponibles(String string, String string2, String string3, String string4) {
+    @Then("Obtengo el listado de vuelos para reservar junto con sus precios")
+    public void obtengo_el_listado_de_vuelos_para_reservar_junto_con_sus_precios() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("Obtengo el listado de vuelos para reservar junto con sus precios")
-    public void obtengo_el_listado_de_vuelos_para_reservar_junto_con_sus_precios() {
+    @Given("Ingreso a la pagina web de avianca y accedo al menu")
+    public void ingreso_a_la_pagina_web_de_avianca_y_accedo_al_menu() {
+        aviancaSteps.ingresarAlPortalWeb();
+        aviancaSteps.accederMenuPrincipal();
+        aviancaSteps.ingresarAlPortalItinerarios();
+    }
+
+    @When("Ingreso la ciudad de {string} y la ciudad {string} ademas de la fecha de {string} y la fecha de {string} para ver los horarios de vuelo disponibles")
+    public void ingreso_la_ciudad_de_y_la_ciudad_ademas_de_la_fecha_de_y_la_fecha_de_para_ver_los_horarios_de_vuelo_disponibles(String string, String string2, String string3, String string4) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }

@@ -26,7 +26,7 @@ public class AviancaPages {
     @FindBy(xpath = "//a[contains(@data-target, '#menu-abierto')]")
     WebElement menuGlobal;
 
-    @FindBy(linkText = "/co/es/tu-reserva/consulta-itinerarios/")
+    @FindBy(xpath = "//a[contains(@href, '/co/es/tu-reserva/consulta-itinerarios/')]")
     WebElement linkItinerarios;
 
     @FindBy(name = "destinoIter")
