@@ -2,8 +2,11 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AviancaPages {
     @FindBy(xpath = "//input[contains(@id, 'pbOrigen')]")
@@ -55,12 +58,15 @@ public class AviancaPages {
 
     public void aviancaWebPageMenuPrincipal() { menuGlobal.click(); }
 
-    public void aviancaItinerarios() { linkItinerarios.click(); }
+    public void aviancaItinerarios() {
+        new WebDriverWait(webDriver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"menu-abierto\"]/div/div/div[2]/div/div[4]/div/div/div[3]/div/ul/li[1]/a"))).click();
+    }
 
     public void ingresarOrigenDestino(String origen, String destino, String tipoAccion){
         switch (tipoAccion) {
             case "reserva" -> {
-                pbOrigen.sendKeys(origen);
+                new WebDriverWait(webDriver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[contains(@id, 'pbOrigen')]"))).sendKeys(origen);
+                //pbOrigen.sendKeys(origen);
                 pbDestino.sendKeys(destino);
             }
             case "itinerario" -> {
