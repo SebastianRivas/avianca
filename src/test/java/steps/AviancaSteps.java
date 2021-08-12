@@ -21,8 +21,8 @@ public class AviancaSteps {
 
     public void buscarReservas(String origen, String destino, String fechaIda, String fechaRegreso){
         aviancaPages.ingresarOrigenDestino(origen, destino, "reserva");
-        aviancaPages.ingresarFechas(fechaIda, fechaRegreso,"reserva");
-        aviancaPages.buscarVuelos();
+        //aviancaPages.ingresarFechas(fechaIda, fechaRegreso,"reserva");
+        //aviancaPages.buscarVuelos();
     }
 
     public void buscarItinerario(String origen, String destino, String fechaIda, String fechaRegreso){

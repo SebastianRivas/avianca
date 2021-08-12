@@ -7,7 +7,7 @@ Feature: Probar el sistema de reservas de avianca
 
     Examples:
     | origen | destino | ida | regreso |
-    | "CLO" | "MAD" | "Vie, 20 ago" | "Lun, 27 sep" |
+    | "Cali" | "Madrid" | "Vie, 20 ago" | "Lun, 27 sep" |
 
   Scenario Outline: Busco el listado de horarios de vuelos ordenados de una manera especifica
     Given Ingreso a la pagina web de avianca y accedo al menu
@@ -16,4 +16,4 @@ Feature: Probar el sistema de reservas de avianca
 
     Examples:
     | origen | destino | ida | regreso |
-    | "CLO" | "MAD" | "Vie, 20 ago" | "Lun, 27 sep" |
+    | "Cali" | "Madrid" | "Vie, 20 ago" | "Lun, 27 sep" |
