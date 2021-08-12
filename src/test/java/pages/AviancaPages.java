@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AviancaPages {
-    //Elements ScenarioA
     @FindBy(name = "pbOrigen")
     WebElement pbOrigen;
 
@@ -22,7 +21,6 @@ public class AviancaPages {
     @FindBy(xpath = "//button[contains(@class,'btn-codepromo pull-btn rojo')]")
     WebElement pbTrip;
 
-    //Elements ScenarioB
     @FindBy(xpath = "//a[contains(@data-target, '#menu-abierto')]")
     WebElement menuGlobal;
 
@@ -56,7 +54,18 @@ public class AviancaPages {
 
     public void aviancaItinerarios() { linkItinerarios.click(); }
 
-    public void ingresarOrigenDestino(String origen, String destino){ }
+    public void ingresarOrigenDestino(String origen, String destino, String tipoAccion){
+        switch (tipoAccion) {
+            case "reserva" -> {
+                pbOrigen.sendKeys(origen);
+                pbDestino.sendKeys(destino);
+            }
+            case "itinerario" -> {
+                pbOrigen.sendKeys(origen);
+                destinoIter.sendKeys(destino);
+            }
+        }
+    }
 
     public void ingresarFechas(String diaIda, String diaRegreso){ }
 

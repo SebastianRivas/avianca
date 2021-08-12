@@ -20,6 +20,10 @@ public class AviancaSteps {
     public void ingresarAlPortalItinerarios() { aviancaPages.aviancaItinerarios(); }
 
     public void buscarReservas(String origen, String destino, String fechaIda, String fechaRegreso){
+        aviancaPages.ingresarOrigenDestino(origen, destino, "reserva");
+    }
 
+    public void buscarItinerario(String origen, String destino, String fechaIda, String fechaRegreso){
+        aviancaPages.ingresarOrigenDestino(origen, destino, "itinerario");
     }
 }

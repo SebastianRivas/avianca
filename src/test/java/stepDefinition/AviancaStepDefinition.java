@@ -44,6 +44,8 @@ public class AviancaStepDefinition {
 
     @Given("Ingreso a la pagina web de avianca y accedo al menu")
     public void ingreso_a_la_pagina_web_de_avianca_y_accedo_al_menu() {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         aviancaSteps.ingresarAlPortalWeb();
         aviancaSteps.accederMenuPrincipal();
         aviancaSteps.ingresarAlPortalItinerarios();
