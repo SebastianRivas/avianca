@@ -6,10 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AviancaPages {
-    @FindBy(xpath = "//input[contains(@class,'airport pbOrigen airport_ida airport_mvvn valid')]")
+    //Elements ScenarioA
+    @FindBy(name = "pbOrigen")
     WebElement pbOrigen;
 
-    @FindBy(xpath = "//input[contains(@class,'airport pbDestino airport_regreso airport_mvvn error')]")
+    @FindBy(name = "pbDestino")
     WebElement pbDestino;
 
     @FindBy(name = "pbFechaIda")
@@ -18,11 +19,27 @@ public class AviancaPages {
     @FindBy(name = "pbFechaRegreso")
     WebElement pbFechaRegreso;
 
-    @FindBy(name = "pbPasajeros")
-    WebElement pbPasajeros;
-
     @FindBy(xpath = "//button[contains(@class,'btn-codepromo pull-btn rojo')]")
     WebElement pbTrip;
+
+    //Elements ScenarioB
+    @FindBy(xpath = "//a[contains(@data-target, '#menu-abierto')]")
+    WebElement menuGlobal;
+
+    @FindBy(linkText = "/co/es/tu-reserva/consulta-itinerarios/")
+    WebElement linkItinerarios;
+
+    @FindBy(name = "destinoIter")
+    WebElement destinoIter;
+
+    @FindBy(name = "fechaIdaIterISO")
+    WebElement fechaIdaIterISO;
+
+    @FindBy(name = "fechaRegresoIterISO")
+    WebElement fechaRegresoIterISO;
+
+    @FindBy(id = "mainContent_Ir")
+    WebElement mainContent_Ir;
 
     private WebDriver webDriver;
 
@@ -35,18 +52,19 @@ public class AviancaPages {
         webDriver.get("https://www.avianca.com/co/es/");
     }
 
-    public void ingresarOrigenDestino(String origen, String destino){
-        pbOrigen.sendKeys(origen);
-        pbDestino.sendKeys(destino);
-    }
+    public void aviancaWebPageMenuPrincipal() { menuGlobal.click(); }
 
-    public void ingresarFechas(String diaIda, String diaRegreso){
-    }
+    public void aviancaItinerarios() { linkItinerarios.click(); }
 
-    public void ingresarPasajeros(String numeroPasajeros){
-    }
+    public void ingresarOrigenDestino(String origen, String destino){ }
+
+    public void ingresarFechas(String diaIda, String diaRegreso){ }
 
     public void buscarVuelos(){
-        pbTrip.click();
+        pbTrip.submit();
+    }
+
+    public void buscarHorarios(){
+        mainContent_Ir.submit();
     }
 }
