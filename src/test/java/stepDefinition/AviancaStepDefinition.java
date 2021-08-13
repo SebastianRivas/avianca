@@ -62,7 +62,7 @@ public class AviancaStepDefinition {
     }
 
     @Then("Obtengo el listado de horarios de vuelos y los organizo dependiendo de la fecha de salida")
-    public void obtengo_ellistado_de_horarios_de_vuelos_y_los_organizo_dependiendo_de_la_fecha_de_salida() {
+    public void obtengo_el_listado_de_horarios_de_vuelos_y_los_organizo_dependiendo_de_la_fecha_de_salida() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }

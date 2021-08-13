@@ -63,22 +63,26 @@ public class AviancaPages {
     public void ingresarOrigenDestino(String origen, String destino, String tipoAccion){
         switch (tipoAccion) {
             case "reserva" -> {
-                pbOrigen.sendKeys(origen);
-                pbOrigen.sendKeys(Keys.ARROW_DOWN);
-                pbOrigen.sendKeys(Keys.ENTER);
+                pbOrigen.click();
+                pbOrigen.sendKeys(origen + Keys.ARROW_DOWN + Keys.ENTER);
+                System.out.println(pbOrigen.getText());
+                //pbOrigen.sendKeys(Keys.ARROW_DOWN);
+                //pbOrigen.sendKeys(Keys.ENTER);
 
-                pbDestino.sendKeys(destino);
-                pbDestino.sendKeys(Keys.ARROW_DOWN);
-                pbDestino.sendKeys(Keys.ENTER);
+                //pbDestino.sendKeys(destino);
+                //pbDestino.sendKeys(Keys.ARROW_DOWN);
+                //pbDestino.sendKeys(Keys.ENTER);
             }
             case "itinerario" -> {
-                origenIter.sendKeys(origen);
-                origenIter.sendKeys(Keys.ARROW_DOWN);
-                origenIter.sendKeys(Keys.ENTER);
+                origenIter.click();
+                origenIter.sendKeys(origen + Keys.ARROW_DOWN + Keys.ENTER);
+                System.out.println(origenIter.getText());
+                //origenIter.sendKeys(Keys.ARROW_DOWN);
+                //origenIter.sendKeys(Keys.ENTER);
 
-                destinoIter.sendKeys(destino);
-                destinoIter.sendKeys(Keys.ARROW_DOWN);
-                destinoIter.sendKeys(Keys.ENTER);
+                //destinoIter.sendKeys(destino);
+                //destinoIter.sendKeys(Keys.ARROW_DOWN);
+                //destinoIter.sendKeys(Keys.ENTER);
             }
         }
     }
