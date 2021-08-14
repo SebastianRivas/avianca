@@ -79,7 +79,6 @@ public class AviancaPages {
     public void ingresarOrigenDestino(String origen, String destino, String tipoAccion){
         switch (tipoAccion) {
             case "reserva" -> {
-                pbOrigen.clear();
                 pbOrigen.click();
                 pbOrigen.sendKeys(origen + Keys.ARROW_DOWN + Keys.ENTER);
 
