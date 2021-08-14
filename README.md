@@ -39,6 +39,5 @@ git clone https://github.com/SebastianRivas/avianca.git
 
 # Run the test
 + First Step: Open IntelliJ IDEA -> click File -> click Open -> Select the folder avianca
-+ Second Step: click Build -> Click Built Project
-+ Update missing dependencies if needed, intellj IDEA will tell you which ones to install and the recommended installation.
++ Second Step: click Build -> Click Built Project (Update missing dependencies if needed, intellj IDEA will tell you which ones to install and the recommended installation).
 + Third step: click run -> click Run 'Feature avianca'
