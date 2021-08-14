@@ -32,7 +32,7 @@ Install in trial version
 Press windows key -> type variables -> click "Editar las variables de entorno del sistema" -> in the variables del usuario section click on path -> click in Editar -> click Nuevo -> Paste C:\Gradle\bin
 
 # Clone the repository
-go to the following location C:\Users\{USER}\IdeaProjects\ and clone the repository
+go to the following location C:\Users\$USER\IdeaProjects\ and clone the repository
 ```
 git clone https://github.com/SebastianRivas/avianca.git
 ```
