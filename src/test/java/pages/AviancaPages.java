@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -79,6 +81,8 @@ public class AviancaPages {
     public void ingresarOrigenDestino(String origen, String destino, String tipoAccion){
         switch (tipoAccion) {
             case "reserva" -> {
+                webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
                 pbOrigen.click();
                 pbOrigen.sendKeys(origen + Keys.ARROW_DOWN + Keys.ENTER);
 
@@ -86,6 +90,8 @@ public class AviancaPages {
                 pbDestino.sendKeys(destino + Keys.ARROW_DOWN + Keys.ENTER);
             }
             case "itinerario" -> {
+                webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
                 origenIter.click();
                 origenIter.sendKeys(origen + Keys.ARROW_DOWN + Keys.ENTER);
 
@@ -98,6 +104,8 @@ public class AviancaPages {
     public void ingresarFechas(String diaIda, String diaRegreso, String tipoAccion){
         switch (tipoAccion) {
             case "reserva" -> {
+                webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
                 pbFechaIda.click();
                 pbFechaIdaDaySelected.click();
 
@@ -105,6 +113,8 @@ public class AviancaPages {
                 pbFechaRegresoDaySelected.click();
             }
             case "itinerario" -> {
+                webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
                 fechaIdaIter.click();
                 fechaIdaIterDaySelected.click();
 
