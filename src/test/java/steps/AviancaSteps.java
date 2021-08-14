@@ -28,8 +28,8 @@ public class AviancaSteps {
 
     public void buscarItinerario(String origen, String destino, String fechaIda, String fechaRegreso){
         aviancaPages.ingresarOrigenDestino(origen, destino, "itinerario");
-        aviancaPages.ingresarFechas(fechaIda, fechaRegreso, "itinerario");
-        aviancaPages.buscarHorarios();
+        //aviancaPages.ingresarFechas(fechaIda, fechaRegreso, "itinerario");
+        //aviancaPages.buscarHorarios();
     }
 
     public void verificarAccesoPortalVuelos(){
